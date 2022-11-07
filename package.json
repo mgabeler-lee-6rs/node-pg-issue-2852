@@ -1,0 +1,22 @@
+{
+  "name": "pg-issue-2852",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgabeler-lee-6rs/node-pg-issue-2852.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgabeler-lee-6rs/node-pg-issue-2852/issues"
+  },
+  "homepage": "https://github.com/mgabeler-lee-6rs/node-pg-issue-2852#readme",
+  "dependencies": {
+    "pg": "^8.8.0"
+  }
+}
