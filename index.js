@@ -36,6 +36,8 @@ async function main() {
       console.log("Rolling back after error");
       await client.query("ROLLBACK");
     }
+    console.log("Releasing client");
+    client.release();
   }
 }
 
