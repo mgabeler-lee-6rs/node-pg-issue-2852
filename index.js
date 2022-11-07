@@ -8,6 +8,11 @@ async function main() {
     console.error("Got an error", { err });
   });
 
+  await mockWork(pool, false);
+  await mockWork(pool, true);
+}
+
+async function mockWork(pool, timeout) {
   const client = await pool.connect();
   // timeout connection after 5 seconds idle in transaction
   await client.query("SET SESSION idle_in_transaction_session_timeout = 5000");
@@ -21,8 +26,9 @@ async function main() {
     // mock some work
     await client.query("SELECT 1");
     console.log("Mocking a delay");
+    const delay = timeout ? 6000 : 4000;
     // mock making some other network call that takes "too long"
-    await new Promise((r) => setTimeout(r, 6000));
+    await new Promise((r) => setTimeout(r, delay));
     doRollback = false;
     // mock more work
     console.log("Mocking more work");
